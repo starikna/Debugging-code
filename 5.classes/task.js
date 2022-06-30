@@ -31,6 +31,9 @@ class PrintEditionItem {
 }
 
 class Magazine extends PrintEditionItem {
+  constructor(name, releaseDate, pagesCount) {
+    super(name, releaseDate, pagesCount);
+  }
   type = "magazine";
 }
 
@@ -58,5 +61,15 @@ class Library {
   constructor(name, books) {
     this.name = name.toString();
     this.books = [];
+  }
+
+  addBook(book, magazine) {
+    if (this.state > 30) {
+      this.books.push(this.book);
+    }
+  }
+
+  findBookBy(type, value) {
+    const searchBook = books.find((book) => book.type === "");
   }
 }
