@@ -70,6 +70,14 @@ class Library {
   }
 
   findBookBy(type, value) {
-    const searchBook = books.find((book) => book.type === "");
+    if (books.find((book) => book.type === "") === true) {
+      return this.book;
+    } else {
+      return null;
+    }
+  }
+
+  giveBookByName(bookName) {
+    this.books.slice();
   }
 }
