@@ -70,14 +70,10 @@ class Library {
   }
 
   findBookBy(type, value) {
-    if (this.books.find((book) => book.value === type[value])) {
+    if (this.books.find((book) => [type, value] === true)) {
       return this.book;
     } else {
       return null;
     }
-  }
-
-  giveBookByName(bookName) {
-    this.books.slice();
   }
 }
