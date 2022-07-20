@@ -70,8 +70,20 @@ class Library {
   }
 
   findBookBy(type, value) {
-    if (this.books.find((book) => [type, value] === true)) {
-      return this.book;
+    const foundBook = this.books.find((book) => book[type] === value);
+
+    if (foundBook !== undefined) {
+      return foundBook;
+    } else {
+      return null;
+    }
+  }
+
+  giveBookByName(bookName) {
+    const issuedBookId = this.books.findIndex((book) => book.name === bookName);
+
+    if (issuedBookId >= 0) {
+      this.books.splice(issuedBookId, 1);
     } else {
       return null;
     }
