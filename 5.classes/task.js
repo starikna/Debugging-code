@@ -83,7 +83,10 @@ class Library {
     const issuedBookId = this.books.findIndex((book) => book.name === bookName);
 
     if (issuedBookId >= 0) {
-      this.books.splice(issuedBookId, 1);
+      const bookId = this.books.splice(issuedBookId, 1);
+      //const issueBook = Object.assign({}, bookId);
+
+      return Object.assign({}, bookId);
     } else {
       return null;
     }
