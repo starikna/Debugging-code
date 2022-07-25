@@ -84,9 +84,6 @@ class Library {
 
     if (issuedBookId >= 0) {
       const bookId = this.books.splice(issuedBookId, 1);
-      //const issueBook = Object.assign({}, bookId);
-
-      //return Object.assign({}, bookId);
       return bookId[0];
     } else {
       return null;
