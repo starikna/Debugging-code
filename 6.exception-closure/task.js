@@ -1,15 +1,18 @@
 function parseCount(string) {
-  const numberOfPurchases = Number.parseInt(string);
-  if (isNaN(numberOfPurchases)) {
+  if (isNaN(string) === true) {
     throw new Error("Невалидное значение");
+  } else {
+    const numberOfPurchases = Number.parseInt(string);
+
+    return numberOfPurchases;
   }
-  return numberOfPurchases;
 }
 
-function validateCount() {
+function validateCount(string) {
   try {
-    parseCount(string);
-    return numberOfPurchases;
+    if (parseCount(string) !== NaN) {
+      return numberOfPurchases;
+    }
   } catch (err) {
     throw new Error("Невалидное значение");
     return err;
